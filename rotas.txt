@@ -1,0 +1,21 @@
++--------+----------+-------------------------+------+-----------------------------------------------------------------+------------+
+| Domain | Method   | URI                     | Name | Action                                                          | Middleware |
++--------+----------+-------------------------+------+-----------------------------------------------------------------+------------+
+|        | GET|HEAD | /                       |      | Closure                                                         | web,guest  |
+|        | POST     | auth/login              |      | App\Http\Controllers\Auth\AuthController@postLogin              | guest      |
+|        | GET|HEAD | auth/login              |      | App\Http\Controllers\Auth\AuthController@getLogin               | guest      |
+|        | GET|HEAD | auth/logout             |      | App\Http\Controllers\Auth\AuthController@getLogout              | guest      |
+|        | GET|HEAD | auth/register           |      | App\Http\Controllers\Auth\AuthController@getRegister            | guest      |
+|        | POST     | auth/register           |      | App\Http\Controllers\Auth\AuthController@postRegister           | guest      |
+|        | POST     | login                   |      | App\Http\Controllers\Auth\AuthController@login                  | web,guest  |
+|        | GET|HEAD | login                   |      | App\Http\Controllers\Auth\AuthController@showLoginForm          | web,guest  |
+|        | GET|HEAD | logout                  |      | App\Http\Controllers\Auth\AuthController@logout                 | web        |
+|        | POST     | password/email          |      | App\Http\Controllers\Auth\PasswordController@sendResetLinkEmail | web,guest  |
+|        | POST     | password/reset          |      | App\Http\Controllers\Auth\PasswordController@reset              | web,guest  |
+|        | GET|HEAD | password/reset/{token?} |      | App\Http\Controllers\Auth\PasswordController@showResetForm      | web,guest  |
+|        | POST     | register                |      | App\Http\Controllers\Auth\AuthController@register               | web,guest  |
+|        | GET|HEAD | register                |      | App\Http\Controllers\Auth\AuthController@showRegistrationForm   | web,guest  |
+|        | POST     | task                    |      | App\Http\Controllers\TaskController@store                       | web,auth   |
+|        | DELETE   | task/{task}             |      | App\Http\Controllers\TaskController@destroy                     | web,auth   |
+|        | GET|HEAD | tasks                   |      | App\Http\Controllers\TaskController@index                       | web,auth   |
++--------+----------+-------------------------+------+-----------------------------------------------------------------+------------+
